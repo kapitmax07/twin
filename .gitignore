@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.pyc
+env/
+.venv/
+*.egg-info/
+
+# env vars
+.env
+.env.*
+!.env.example
+
+# OS
+.DS_Store
+
+# Next.js app lives in web/ and has its own .gitignore
