@@ -1,0 +1,87 @@
+KENEL BELIZAIRE 
+Network and Security Engineer 
+Deerfield Beach, FL | (754) 303-6616 | kenelb01@gmail.com 
+linkedin.com/in/kenelb 
+PROFESSIONAL SUMMARY 
+Network and Security Engineer with over 20 years of experience designing, implementing, and securing enterprise LAN and 
+WAN infrastructure across financial services, healthcare, and utility environments. Proven record of reducing downtime, 
+hardening network security posture, and delivering infrastructure projects on schedule and within budget. Hands -on expertise 
+in Cisco routing and switching, firewall administration, Security Information and Event Management (SIEM), vulnerability 
+remediation, and network access control. Certified in CompTIA SecurityX (CASP+), CySA+, Security+, CSAE,  AI Engineer, and 
+Cisco CCNA with CCNP Security in progress. 
+TECHNICAL SKILLS 
+AI Automation: BuildIQ AI Estimator • Project Completed August 12, 2026 and my twin 
+Network Security: Firewall administration (Cisco ASA, Firepower Threat Defense), VPN (IPsec, SSL), network segmentation, port 
+security, access control lists, Cisco Identity Services Engine (ISE), network access control  
+Security Operations: Security Information and Event Management (SIEM), syslog, SNMP, log analysis, vulnerability assessment, 
+patch management, incident response, threat detection, risk analysis 
+Routing and Switching: EIGRP, OSPF, OSPFv3, BGP, static and dynamic routing, VLAN, trunking, Spanning Tree Protocol (STP), 
+EtherChannel, IPv6 routing 
+Protocols and Networking: TCP/IP, OSI model, IP addressing and subnetting, DNS, DHCP, ARP, ICMP, traceroute, windowing, 
+fragmentation, flow control 
+Systems and Cloud: Windows Server, Active Directory, Linux, UNIX, enterprise storage, cloud security, virtualization  
+Compliance and Documentation: PCI-DSS, GLBA, network documentation, configuration standards, operational runbooks, 
+policy and procedure development, client needs analysis 
+Hardware and Platforms: Cisco Firepower Threat Defense 4215, virtual Firepower Management Center 7.3, Cisco ISE 3.x and 
+2.x, Cisco ASA 5500 series; Nexus 9000/7000/5000/2000, Catalyst 9100/3850/3750/2960; ISR 4000, CSR1000v, 
+2900/2800/1900/1841 routers 
+CERTIFICATIONS 
+• CompTIA SecurityX (formerly CASP+), CompTIA Advanced Security Practitioner  
+• CompTIA Security Analytics Expert (CSAE) 
+• CompTIA Cybersecurity Analyst (CySA+) 
+• CompTIA Security+ 
+• Cisco Certified Network Associate (CCNA) 
+• Cisco Certified Network Professional Security (CCNP Security), in progress, expected June 2027 
+• Cisco AI Solutions on Cisco Infrastructure Essentials (DCAIE) 
+• Microsoft Certified Professional (MCP) 
+PROFESSIONAL EXPERIENCE 
+Information Technology Support Consultant 
+Desir Financial Group, Pompano Beach, FL | March 2020 to January 2026 
+• Designed and implemented secure LAN, WAN, and firewall architectures across client environments, reducing unplanned 
+downtime 25% and increasing operational productivity 20%. 
+• Maintained a 95% first-contact resolution rate on network, VPN, and endpoint security escalations.  
+• Led network expansion and firewall migration projects from scoping through cutover, delivering on schedule and within 
+budget. • Hardened perimeter and access-layer security using firewall rule optimization, VLAN segmentation, port security, and 
+structured patch management. 
+• Deployed centralized syslog and SNMP monitoring integrated with SIEM, improving threat detection and shortening 
+incident response time. 
+• Performed vulnerability assessments and risk analysis, prioritizing remediation by business impact.  
+• Authored network documentation, configuration standards, and operational run  books; delivered security awareness and 
+technology training to client staff. 
+Nurse Call System Technician 
+BESCO, Delray Beach, FL | September 2016 to March 2018 
+• Installed, commissioned, and maintained nurse call, intercom, and patient monitoring systems in active healthcare facilities.  
+• Diagnosed and repaired critical system failures, executed upgrades to add current functionality, and trained clinical staff on 
+system operation. 
+Network Technician 
+TCE Technologies, Miami, FL | December 2011 to December 2015 
+• Installed, terminated, and certified Cat5e and Cat6 copper and fiber optic cabling across commercial sites to structured 
+cabling standards. 
+• Configured network switches, wireless access points, and security parameters for client deployments.  
+• Built and organized wiring closets, ladder racks, and patch panel terminations, reducing downstream troubleshooting time. 
+• Installed and integrated CCTV, intercom, and wireless network systems as unified managed solutions.  
+Network Administrator 
+EDH, Port-au-Prince, Haiti | December 2000 to December 2011 
+• Directed technical management and lifecycle planning of corporate LA N and WAN infrastructure supporting [#] users across 
+[#] sites. 
+• Administered a mixed-platform server environment spanning UNIX, Linux, Windows Server, and enterprise storage systems.  
+• Conducted server security analysis, patch management, and vulnerability r emediation to protect systems against emerging 
+threats. 
+• Deployed and engineered wireless network infrastructure, extending coverage and improving throughput across facilities.  
+• Evaluated and implemented system upgrades, patches, and new applications, improving performance and reliability. 
+• Created and maintained network configuration documentation and structured cabling layouts, improving system 
+manageability and handoff. 
+• Led training programs for technical staff on new hardware and software platforms, building internal capability. 
+EDUCATION 
+Bachelor of Science, Computer Science 
+European-American University, February 2026 
+• Coursework completed at University of Port-au-Prince, Port-au-Prince, Haiti, 2002 to 2006. 
+Associate of Science, Network Administration 
+ATI Career Training Center, Fort Lauderdale, FL | 2011 
+• Graduated with honors, 3.9 GPA. Completed applied projects in network design and security.  
+CCNP Security Program 
+PM Networking Institute | August 2025 to Present 
+• Advanced coursework in firewall and VPN technologies, with a capstone project in secure network design. 
+ADDITIONAL TRAINING 
+AI Automation: Build LLM Apps and AI Agents with n8n and APIs | The Complete AI Agents and AI Automation Course (2025), 
+n8n | ChatGPT in Microsoft 365: Generative AI, Prompt Engineering, Chatbots, Plugins, DALL-E, Outlook, Teams, AI Engineer 
