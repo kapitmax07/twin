@@ -13,6 +13,8 @@ const EXAMPLES = [
 
 export default function Page() {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [history, setHistory] = useState<Message[][]>([[]]);
+  const [historyIndex, setHistoryIndex] = useState(0);
   const [input, setInput] = useState("");
   const [pending, setPending] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,6 +23,32 @@ export default function Page() {
   useEffect(() => {
     messagesRef.current?.scrollTo({ top: messagesRef.current.scrollHeight });
   }, [messages, pending]);
+
+  function commit(next: Message[]) {
+    setMessages(next);
+    setHistory([...history.slice(0, historyIndex + 1), next]);
+    setHistoryIndex(historyIndex + 1);
+  }
+
+  function goBack() {
+    if (pending || historyIndex === 0) return;
+    const nextIndex = historyIndex - 1;
+    setHistoryIndex(nextIndex);
+    setMessages(history[nextIndex]);
+  }
+
+  function goForward() {
+    if (pending || historyIndex >= history.length - 1) return;
+    const nextIndex = historyIndex + 1;
+    setHistoryIndex(nextIndex);
+    setMessages(history[nextIndex]);
+  }
+
+  function clearChat() {
+    if (pending || messages.length === 0) return;
+    setError(null);
+    commit([]);
+  }
 
   async function sendMessage(text: string) {
     const trimmed = text.trim();
@@ -45,7 +73,7 @@ export default function Page() {
       }
 
       const data = await res.json();
-      setMessages([...nextMessages, { role: "assistant", content: data.reply }]);
+      commit([...nextMessages, { role: "assistant", content: data.reply }]);
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong.");
     } finally {
@@ -55,8 +83,44 @@ export default function Page() {
 
   return (
     <main className="page">
-      <h1>Digital Twin</h1>
-      <p className="subtitle">Talk to my AI twin about my career</p>
+      <div className="header-row">
+        <div>
+          <h1>Digital Twin</h1>
+          <p className="subtitle">Talk to my AI twin about my career</p>
+        </div>
+        <div className="history-controls">
+          <button
+            type="button"
+            className="history-btn"
+            onClick={goBack}
+            disabled={pending || historyIndex === 0}
+            aria-label="Undo last message"
+            title="Back"
+          >
+            ←
+          </button>
+          <button
+            type="button"
+            className="history-btn"
+            onClick={goForward}
+            disabled={pending || historyIndex >= history.length - 1}
+            aria-label="Redo last undone message"
+            title="Forward"
+          >
+            →
+          </button>
+          <button
+            type="button"
+            className="history-btn clear-btn"
+            onClick={clearChat}
+            disabled={pending || messages.length === 0}
+            aria-label="Clear conversation"
+            title="Clear"
+          >
+            Clear
+          </button>
+        </div>
+      </div>
 
       <div className="chatbox">
         <div className="messages" ref={messagesRef}>
