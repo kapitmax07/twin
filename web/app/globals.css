@@ -49,6 +49,15 @@ h1 {
   padding-left: 15px;
 }
 
+.subtitle a {
+  color: var(--twin-accent-2);
+  text-decoration: none;
+}
+
+.subtitle a:hover {
+  text-decoration: underline;
+}
+
 .header-row {
   display: flex;
   align-items: flex-start;
@@ -209,4 +218,241 @@ h1 {
   color: #d9534f;
   font-size: 13px;
   padding: 0 16px 10px;
+}
+
+/* --- Twin 3D profile page --- */
+
+.twin-page {
+  width: 100%;
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 24px 24px 64px;
+  min-height: 100vh;
+}
+
+.twin-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0 32px;
+}
+
+.twin-nav-brand {
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.twin-nav-link {
+  color: var(--twin-accent-2);
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.twin-nav-link:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: center;
+  padding: 24px 0 56px;
+}
+
+.eyebrow {
+  color: var(--twin-accent-2);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.hero-text h1 {
+  font-size: 40px;
+  margin: 0 0 8px;
+  padding-left: 0;
+  border-left: none;
+}
+
+.hero-text .role {
+  color: var(--twin-muted);
+  font-size: 17px;
+  margin: 0 0 16px;
+  font-weight: 600;
+}
+
+.hero-body {
+  color: var(--twin-text);
+  line-height: 1.6;
+  margin: 0 0 24px;
+  max-width: 46ch;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-block;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: var(--twin-accent);
+  color: #ffffff;
+  border: 1px solid var(--twin-accent);
+}
+
+.btn-primary:hover {
+  background: var(--twin-blue);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--twin-text);
+  border: 1px solid var(--twin-border-strong);
+}
+
+.btn-secondary:hover {
+  border-color: var(--twin-accent);
+}
+
+.avatar-frame {
+  background: var(--twin-surface);
+  border: 1px solid var(--twin-border);
+  overflow: hidden;
+}
+
+.avatar-frame > div {
+  width: 100%;
+  height: 460px;
+}
+
+@media (max-width: 760px) {
+  .avatar-frame > div {
+    height: 360px;
+  }
+}
+
+.avatar-caption {
+  text-align: center;
+  color: var(--twin-muted);
+  font-size: 12px;
+  padding: 10px;
+  margin: 0;
+  border-top: 1px solid var(--twin-border);
+}
+
+.section {
+  padding: 40px 0;
+  border-top: 1px solid var(--twin-border);
+}
+
+.section h2 {
+  font-size: 22px;
+  margin: 0 0 20px;
+  letter-spacing: -0.01em;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.skill-card {
+  background: var(--twin-surface);
+  border: 1px solid var(--twin-border);
+  padding: 18px;
+}
+
+.skill-card h3 {
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: var(--twin-accent-2);
+}
+
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: var(--twin-surface-2);
+  border: 1px solid var(--twin-border-strong);
+  color: var(--twin-text);
+  font-size: 12.5px;
+  padding: 5px 10px;
+}
+
+.tag-cert {
+  border-color: var(--twin-accent);
+  color: var(--twin-accent-2);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 16px 1fr;
+  gap: 16px;
+}
+
+.timeline-dot {
+  width: 10px;
+  height: 10px;
+  margin-top: 6px;
+  background: var(--twin-accent);
+  border-radius: 50%;
+}
+
+.timeline-content h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+.timeline-meta {
+  color: var(--twin-muted);
+  font-size: 13px;
+  margin: 0 0 10px;
+}
+
+.timeline-content ul {
+  margin: 0;
+  padding-left: 18px;
+  color: var(--twin-text);
+  line-height: 1.6;
+  font-size: 14.5px;
+}
+
+.twin-footer {
+  text-align: center;
+  padding: 48px 0 8px;
+  border-top: 1px solid var(--twin-border);
+}
+
+.twin-footer p {
+  color: var(--twin-muted);
+  margin: 0 0 16px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
 }

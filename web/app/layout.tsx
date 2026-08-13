@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Digital Twin",
+  title: "Kenel Belizaire",
   description: "Talk to my AI twin about my career",
 };
 

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Link from "next/link";
 
 type Message = { role: "user" | "assistant"; content: string };
 
@@ -85,8 +86,10 @@ export default function Page() {
     <main className="page">
       <div className="header-row">
         <div>
-          <h1>Digital Twin</h1>
-          <p className="subtitle">Talk to my AI twin about my career</p>
+          <h1>Kenel Belizaire</h1>
+          <p className="subtitle">
+            Talk to my AI twin about my career · <Link href="/twin">View 3D profile →</Link>
+          </p>
         </div>
         <div className="history-controls">
           <button
