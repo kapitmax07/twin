@@ -1,29 +1,27 @@
 import type OpenAI from "openai";
 import type { ChatCompletionMessageToolCall, ChatCompletionToolMessageParam } from "openai/resources/chat/completions";
 
-const PUSHOVER_URL = "https://api.pushover.net/1/messages.json";
-
 async function push(text: string): Promise<void> {
-  const token = process.env.PUSHOVER_TOKEN;
-  const user = process.env.PUSHOVER_USER;
+  const token = process.env.TELEGRAM_BOT_TOKEN;
+  const chatId = process.env.TELEGRAM_CHAT_ID;
 
-  if (!token || !user) {
-    console.warn("Pushover credentials not configured; skipping notification:", text);
+  if (!token || !chatId) {
+    console.warn("Telegram credentials not configured; skipping notification:", text);
     return;
   }
 
   try {
-    const response = await fetch(PUSHOVER_URL, {
+    const response = await fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
       method: "POST",
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({ token, user, message: text }),
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ chat_id: chatId, text }),
       signal: AbortSignal.timeout(5000),
     });
     if (!response.ok) {
-      console.error("Pushover notification failed:", response.status, await response.text());
+      console.error("Telegram notification failed:", response.status, await response.text());
     }
   } catch (err) {
-    console.error("Pushover notification failed:", err);
+    console.error("Telegram notification failed:", err);
   }
 }
 

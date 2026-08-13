@@ -1,8 +1,8 @@
-# Twin — web
+# Twin — frontend
 
 A Next.js port of the Digital Twin chatbot, built to deploy natively on Vercel.
 
-The original Gradio app (in the repo root) runs as a persistent stateful
+The original Gradio app (in `backend/`) runs as a persistent stateful
 server and is not compatible with Vercel's serverless model. This app
 reimplements the same chat + tool-calling behavior as a standard Next.js app:
 a React chat UI (`app/page.tsx`) backed by a serverless API route
@@ -11,7 +11,7 @@ a React chat UI (`app/page.tsx`) backed by a serverless API route
 ## Local development
 
 ```bash
-cd web
+cd frontend
 npm install
 cp .env.example .env.local   # then fill in OPENAI_API_KEY at minimum
 npm run dev
@@ -23,12 +23,12 @@ Open http://localhost:3000.
 
 | Variable          | Required | Purpose                                                        |
 | ------------------ | -------- | ---------------------------------------------------------------- |
-| `OPENAI_API_KEY`  | yes      | OpenAI API key used by the chat route                          |
-| `OPENAI_MODEL`    | no       | Model id, defaults to `gpt-4o-mini`                             |
-| `PUSHOVER_USER`   | no       | Pushover user key, for contact/unknown-question notifications  |
-| `PUSHOVER_TOKEN`  | no       | Pushover app token                                              |
+| `OPENAI_API_KEY`     | yes      | OpenAI API key used by the chat route                          |
+| `OPENAI_MODEL`       | no       | Model id, defaults to `gpt-4o-mini`                             |
+| `TELEGRAM_BOT_TOKEN` | no       | Telegram bot token (from @BotFather), for contact/unknown-question notifications |
+| `TELEGRAM_CHAT_ID`   | no       | Telegram chat/user id the bot should message                   |
 
-If the Pushover variables are unset, notifications are logged to the server
+If the Telegram variables are unset, notifications are logged to the server
 console instead of failing the request.
 
 ## Updating the twin's profile data
@@ -54,8 +54,9 @@ git push github main
 **2. Import the project in Vercel**
 
 - Go to https://vercel.com/new and import the GitHub repo
-- Set **Root Directory** to `web` (this is a monorepo — the Python app stays
-  at the repo root for Hugging Face Spaces, this Next.js app lives in `web/`)
+- Set **Root Directory** to `frontend` (this is a monorepo — the Python app
+  lives in `backend/` for Hugging Face Spaces, this Next.js app lives in
+  `frontend/`)
 - Framework preset: Next.js (auto-detected)
 - Add environment variables from the table above under
   Project Settings → Environment Variables
@@ -64,7 +65,7 @@ git push github main
 **3. Or deploy from the CLI without GitHub:**
 
 ```bash
-cd web
+cd frontend
 npm install -g vercel   # if you don't have it
 vercel                  # first deploy, follow prompts, set root dir when asked
 vercel --prod           # subsequent production deploys

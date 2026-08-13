@@ -26,7 +26,7 @@ body {
 
 .page {
   width: 100%;
-  max-width: 880px;
+  max-width: 1100px;
   margin: 0 auto;
   padding: 32px 24px 48px;
   min-height: 100vh;
@@ -100,7 +100,7 @@ h1 {
 .chatbox {
   background: var(--twin-surface);
   border: 1px solid var(--twin-border);
-  min-height: 460px;
+  min-height: 560px;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -224,9 +224,9 @@ h1 {
 
 .twin-page {
   width: 100%;
-  max-width: 1040px;
+  max-width: 1360px;
   margin: 0 auto;
-  padding: 24px 24px 64px;
+  padding: 24px 32px 64px;
   min-height: 100vh;
 }
 
@@ -242,21 +242,27 @@ h1 {
   letter-spacing: -0.01em;
 }
 
+.twin-nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
 .twin-nav-link {
-  color: var(--twin-accent-2);
+  color: var(--twin-text);
   text-decoration: none;
   font-size: 14px;
   font-weight: 600;
 }
 
 .twin-nav-link:hover {
-  text-decoration: underline;
+  color: var(--twin-accent-2);
 }
 
 .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 32px;
+  gap: 48px;
   align-items: center;
   padding: 24px 0 56px;
 }
@@ -288,7 +294,7 @@ h1 {
   color: var(--twin-text);
   line-height: 1.6;
   margin: 0 0 24px;
-  max-width: 46ch;
+  max-width: 52ch;
 }
 
 .hero-actions {
@@ -335,7 +341,7 @@ h1 {
 
 .avatar-frame > div {
   width: 100%;
-  height: 460px;
+  height: 520px;
 }
 
 @media (max-width: 760px) {
@@ -364,9 +370,33 @@ h1 {
   letter-spacing: -0.01em;
 }
 
+.section-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+}
+
+.section-heading h2 {
+  margin: 0 0 20px;
+}
+
+.credly-link {
+  color: var(--twin-accent-2);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.credly-link:hover {
+  text-decoration: underline;
+}
+
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 20px;
 }
 
@@ -446,9 +476,18 @@ h1 {
   border-top: 1px solid var(--twin-border);
 }
 
+.twin-footer h2 {
+  font-size: 22px;
+  margin: 0 0 12px;
+}
+
 .twin-footer p {
   color: var(--twin-muted);
-  margin: 0 0 16px;
+  margin: 0 0 20px;
+}
+
+.twin-footer-actions {
+  justify-content: center;
 }
 
 @media (max-width: 760px) {

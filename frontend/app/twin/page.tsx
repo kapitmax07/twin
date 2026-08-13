@@ -100,13 +100,13 @@ const EXPERIENCE = [
 const EDUCATION = [
   {
     degree: "B.S. Computer Science",
-    org: "European-American University",
-    dates: "Feb 2026",
+    org: "European-American University, Paris, France",
+    dates: "",
   },
   {
     degree: "A.S. Network Administration",
-    org: "ATI Career Training Center, Fort Lauderdale, FL",
-    dates: "2011 · Honors, 3.9 GPA",
+    org: "ATI Career Training Center, Fort Lauderdale, United States of America",
+    dates: "",
   },
   {
     degree: "CCNP Security Program",
@@ -120,12 +120,20 @@ export default function TwinProfilePage() {
     <main className="twin-page">
       <nav className="twin-nav">
         <span className="twin-nav-brand">Kenel Belizaire</span>
-        <Link href="/" className="twin-nav-link">
-          Chat with my AI twin →
-        </Link>
+        <div className="twin-nav-links">
+          <Link href="/" className="twin-nav-link">
+            Digital Twin
+          </Link>
+          <a href="#about" className="twin-nav-link">
+            About
+          </a>
+          <a href="#contact" className="twin-nav-link">
+            Contact
+          </a>
+        </div>
       </nav>
 
-      <section className="hero">
+      <section id="about" className="hero">
         <div className="hero-text">
           <p className="eyebrow">Digital Twin — Interactive Profile</p>
           <h1>Kenel Belizaire</h1>
@@ -133,7 +141,7 @@ export default function TwinProfilePage() {
           <p className="hero-body">
             Over 20 years designing, implementing, and securing enterprise LAN and WAN
             infrastructure across financial services, healthcare, and utility environments.
-            Originally from Port-de-Paix, Haiti, based in Florida since 2010.
+            Originally from Port-au-Prince, Haiti, based in Florida since 2010.
           </p>
           <div className="hero-actions">
             <Link href="/" className="btn-primary">
@@ -141,6 +149,14 @@ export default function TwinProfilePage() {
             </Link>
             <a href="mailto:kenelb01@gmail.com" className="btn-secondary">
               Email me
+            </a>
+            <a
+              href="https://www.linkedin.com/in/kenelb/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              LinkedIn ↗
             </a>
           </div>
         </div>
@@ -170,7 +186,17 @@ export default function TwinProfilePage() {
       </section>
 
       <section className="section">
-        <h2>Certifications</h2>
+        <div className="section-heading">
+          <h2>Certifications</h2>
+          <a
+            href="https://www.credly.com/users/kenel-belizaire/badges/credly"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="credly-link"
+          >
+            View verified badges on Credly ↗
+          </a>
+        </div>
         <div className="tag-list">
           {CERTIFICATIONS.map((cert) => (
             <span key={cert} className="tag tag-cert">
@@ -211,7 +237,7 @@ export default function TwinProfilePage() {
               <div className="timeline-content">
                 <h3>{ed.degree}</h3>
                 <p className="timeline-meta">
-                  {ed.org} · {ed.dates}
+                  {ed.dates ? `${ed.org} · ${ed.dates}` : ed.org}
                 </p>
               </div>
             </div>
@@ -219,11 +245,14 @@ export default function TwinProfilePage() {
         </div>
       </section>
 
-      <footer className="twin-footer">
+      <footer id="contact" className="twin-footer">
+        <h2>Contact</h2>
         <p>Want to know more? Ask my AI twin directly.</p>
-        <Link href="/" className="btn-primary">
-          Open the chat →
-        </Link>
+        <div className="hero-actions twin-footer-actions">
+          <Link href="/" className="btn-primary">
+            Open the chat →
+          </Link>
+        </div>
       </footer>
     </main>
   );

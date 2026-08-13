@@ -13,4 +13,7 @@ env/
 # OS
 .DS_Store
 
-# Next.js app lives in web/ and has its own .gitignore
+# Conversation memory (backend/server.py)
+memory/
+
+# Next.js app lives in frontend/ and has its own .gitignore

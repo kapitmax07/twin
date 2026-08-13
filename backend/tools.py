@@ -5,21 +5,24 @@ from dotenv import load_dotenv
 
 load_dotenv(override=True)
 
-pushover_user = os.getenv("PUSHOVER_USER")
-pushover_token = os.getenv("PUSHOVER_TOKEN")
-
-pushover_url = "https://api.pushover.net/1/messages.json"
+telegram_bot_token = os.getenv("TELEGRAM_BOT_TOKEN")
+telegram_chat_id = os.getenv("TELEGRAM_CHAT_ID")
 
 
 def push(text):
-    requests.post(
-        pushover_url,
-        data={
-            "token": pushover_token,
-            "user": pushover_user,
-            "message": text,
-        },
-    )
+    if not telegram_bot_token or not telegram_chat_id:
+        print(f"Telegram credentials not configured; skipping notification: {text}", flush=True)
+        return
+    try:
+        response = requests.post(
+            f"https://api.telegram.org/bot{telegram_bot_token}/sendMessage",
+            data={"chat_id": telegram_chat_id, "text": text},
+            timeout=5,
+        )
+        if not response.ok:
+            print(f"Telegram notification failed: {response.status_code} {response.text}", flush=True)
+    except requests.RequestException as e:
+        print(f"Telegram notification failed: {e}", flush=True)
 
 
 def record_user_details(email, name="Name not provided", notes="not provided"):
