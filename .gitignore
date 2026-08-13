@@ -17,3 +17,9 @@ env/
 memory/
 
 # Next.js app lives in frontend/ and has its own .gitignore
+
+# Vercel CLI project link/token cache
+.vercel
+
+.vercel
+.env*
