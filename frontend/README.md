@@ -2,9 +2,9 @@
 
 A Next.js port of the Digital Twin chatbot, built to deploy natively on Vercel.
 
-The original Gradio app (in `backend/`) runs as a persistent stateful
-server and is not compatible with Vercel's serverless model. This app
-reimplements the same chat + tool-calling behavior as a standard Next.js app:
+`backend/server.py` (FastAPI) is a separate, persistent stateful service and
+isn't compatible with Vercel's serverless model. This app independently
+implements the same chat + tool-calling behavior as a standard Next.js app:
 a React chat UI (`app/page.tsx`) backed by a serverless API route
 (`app/api/chat/route.ts`) that calls the OpenAI API.
 
@@ -42,21 +42,18 @@ them from an updated LinkedIn export, re-extract the PDF text and overwrite
 
 ## Deploying to Vercel
 
-**1. Push this repo to GitHub** (Vercel deploys from a git provider; the
-repo's current `origin` remote points at Hugging Face Spaces, so add GitHub
-as a second remote rather than replacing it):
+**1. Push this repo to GitHub** (Vercel deploys from a git provider):
 
 ```bash
-git remote add github https://github.com/<you>/twin.git
-git push github main
+git remote add origin https://github.com/<you>/twin.git
+git push -u origin main
 ```
 
 **2. Import the project in Vercel**
 
 - Go to https://vercel.com/new and import the GitHub repo
-- Set **Root Directory** to `frontend` (this is a monorepo — the Python app
-  lives in `backend/` for Hugging Face Spaces, this Next.js app lives in
-  `frontend/`)
+- Set **Root Directory** to `frontend` (this is a monorepo — the Python
+  FastAPI service lives in `backend/`, this Next.js app lives in `frontend/`)
 - Framework preset: Next.js (auto-detected)
 - Add environment variables from the table above under
   Project Settings → Environment Variables
