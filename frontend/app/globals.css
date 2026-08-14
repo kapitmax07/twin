@@ -603,8 +603,9 @@ h1 {
 .modal-panel {
   background: var(--twin-bg);
   width: 100%;
-  max-width: 620px;
-  max-height: 85vh;
+  max-width: 800px;
+  height: min(84vh, 840px);
+  max-height: calc(100vh - 48px);
   display: flex;
   flex-direction: column;
   border: 1px solid var(--twin-border-strong);
@@ -614,7 +615,8 @@ h1 {
 }
 
 .modal-panel .header-row {
-  padding: 16px 16px 0;
+  padding: 18px 20px 0;
+  flex-shrink: 0;
 }
 
 .modal-panel .chatbox {
@@ -623,12 +625,12 @@ h1 {
   border: none;
   border-radius: 0;
   border-top: 1px solid var(--twin-border);
-  margin-top: 12px;
+  margin-top: 14px;
   box-shadow: none;
 }
 
 .modal-title {
-  font-size: 16.5px;
+  font-size: 17px;
   font-weight: 700;
   letter-spacing: -0.01em;
   border-left: 3px solid var(--twin-accent);
@@ -636,8 +638,17 @@ h1 {
   margin: 4px 0;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  .modal-overlay {
+    padding: 0;
+  }
+
   .modal-panel {
-    max-height: 90vh;
+    max-width: 100%;
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    border-radius: 0;
+    border: none;
   }
 }
