@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import TwinAvatar from "@/components/TwinAvatar";
 import TalkToTwinButton from "@/components/TalkToTwinButton";
 
@@ -149,9 +148,7 @@ export default function TwinProfilePage() {
       <nav className="twin-nav">
         <span className="twin-nav-brand">Kenel Belizaire</span>
         <div className="twin-nav-links">
-          <Link href="/" className="twin-nav-link">
-            Digital Twin
-          </Link>
+          <TalkToTwinButton className="twin-nav-link">Digital Twin</TalkToTwinButton>
           <a href="#about" className="twin-nav-link">
             About
           </a>
