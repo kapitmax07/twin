@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import TwinAvatar from "@/components/TwinAvatar";
+import TalkToTwinButton from "@/components/TalkToTwinButton";
 
 export const metadata: Metadata = {
   title: "Kenel Belizaire — Digital Twin",
@@ -115,6 +116,33 @@ const EDUCATION = [
   },
 ];
 
+const CONTINUING_EDUCATION = [
+  {
+    title: "AI Builder",
+    description: "Create Agents, Voice Agents & Automations in n8n",
+  },
+  {
+    title: "AI Coder",
+    description: "Complete Claude Code & Coding Agents",
+  },
+  {
+    title: "AI Leader",
+    description: "Generative AI & Agentic AI for Leaders & Founders",
+  },
+  {
+    title: "AI Engineer Core Track",
+    description: "LLM Engineering, RAG, QLoRA, Agents",
+  },
+  {
+    title: "AI Engineer Agentic Track",
+    description: "The Complete Agent & MCP",
+  },
+  {
+    title: "AI Engineer Production Track",
+    description: "Deploy LLMs & Agents at Scale",
+  },
+];
+
 export default function TwinProfilePage() {
   return (
     <main className="twin-page">
@@ -144,9 +172,7 @@ export default function TwinProfilePage() {
             Originally from Port-au-Prince, Haiti, based in Florida since 2010.
           </p>
           <div className="hero-actions">
-            <Link href="/" className="btn-primary">
-              Talk to my AI twin
-            </Link>
+            <TalkToTwinButton className="btn-primary">Talk to my AI twin</TalkToTwinButton>
             <a href="mailto:kenelb01@gmail.com" className="btn-secondary">
               Email me
             </a>
@@ -245,13 +271,26 @@ export default function TwinProfilePage() {
         </div>
       </section>
 
+      <section className="section">
+        <h2>Continuing Education</h2>
+        <div className="timeline">
+          {CONTINUING_EDUCATION.map((course) => (
+            <div key={course.title} className="timeline-item">
+              <div className="timeline-dot" />
+              <div className="timeline-content">
+                <h3>{course.title}</h3>
+                <p className="timeline-meta">{course.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <footer id="contact" className="twin-footer">
         <h2>Contact</h2>
         <p>Want to know more? Ask my AI twin directly.</p>
         <div className="hero-actions twin-footer-actions">
-          <Link href="/" className="btn-primary">
-            Open the chat →
-          </Link>
+          <TalkToTwinButton className="btn-primary">Open the chat →</TalkToTwinButton>
         </div>
       </footer>
     </main>

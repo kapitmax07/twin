@@ -495,3 +495,54 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
+
+/* --- Chat modal --- */
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 7, 15, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  z-index: 1000;
+}
+
+.modal-panel {
+  background: var(--twin-bg);
+  width: 100%;
+  max-width: 640px;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--twin-border-strong);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+}
+
+.modal-panel .header-row {
+  padding: 16px 16px 0;
+}
+
+.modal-panel .chatbox {
+  min-height: 0;
+  flex: 1;
+  border: none;
+  border-top: 1px solid var(--twin-border);
+  margin-top: 12px;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  border-left: 3px solid var(--twin-accent);
+  padding-left: 12px;
+  margin: 4px 0;
+}
+
+@media (max-width: 600px) {
+  .modal-panel {
+    max-height: 90vh;
+  }
+}
