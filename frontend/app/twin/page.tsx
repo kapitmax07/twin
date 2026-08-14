@@ -261,16 +261,11 @@ export default function TwinProfilePage() {
 
       <section className="section">
         <h2>Education</h2>
-        <div className="timeline">
+        <div className="card-grid">
           {EDUCATION.map((ed) => (
-            <div key={ed.degree} className="timeline-item">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <h3>{ed.degree}</h3>
-                <p className="timeline-meta">
-                  {ed.dates ? `${ed.org} · ${ed.dates}` : ed.org}
-                </p>
-              </div>
+            <div key={ed.degree} className="info-card">
+              <h3>{ed.degree}</h3>
+              <p>{ed.dates ? `${ed.org} · ${ed.dates}` : ed.org}</p>
             </div>
           ))}
         </div>
@@ -278,14 +273,11 @@ export default function TwinProfilePage() {
 
       <section className="section">
         <h2>Continuing Education</h2>
-        <div className="timeline">
+        <div className="card-grid">
           {CONTINUING_EDUCATION.map((course) => (
-            <div key={course.title} className="timeline-item">
-              <div className="timeline-dot" />
-              <div className="timeline-content">
-                <h3>{course.title}</h3>
-                {course.description && <p className="timeline-meta">{course.description}</p>}
-              </div>
+            <div key={course.title} className="info-card">
+              <h3>{course.title}</h3>
+              {course.description && <p>{course.description}</p>}
             </div>
           ))}
         </div>

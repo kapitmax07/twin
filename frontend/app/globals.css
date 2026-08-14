@@ -494,6 +494,33 @@ h1 {
   color: var(--twin-accent-2);
 }
 
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.info-card {
+  background: var(--twin-surface);
+  border: 1px solid var(--twin-border);
+  border-radius: var(--twin-radius);
+  padding: 16px 18px;
+}
+
+.info-card h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 4px;
+  line-height: 1.35;
+}
+
+.info-card p {
+  color: var(--twin-muted);
+  font-size: 13px;
+  line-height: 1.5;
+  margin: 0;
+}
+
 .timeline {
   position: relative;
   display: flex;
