@@ -150,6 +150,21 @@ const CONTINUING_EDUCATION = [
   },
 ];
 
+const PROJECTS = [
+  {
+    title: "AI Digital Twin",
+    description:
+      "An AI-powered digital twin — an interactive 3D profile and chatbot that answers questions about my career, background, and skills.",
+    url: "https://twin-eta.vercel.app/twin",
+  },
+  {
+    title: "BuildIQ",
+    description:
+      "An AI-powered project estimator for contractors, with instant estimates across electrical, plumbing, HVAC, roofing, and other trades.",
+    url: "https://build-iq-ten.vercel.app/",
+  },
+];
+
 export default function TwinProfilePage() {
   return (
     <main className="twin-page">
@@ -157,6 +172,9 @@ export default function TwinProfilePage() {
         <span className="twin-nav-brand">Kenel Belizaire</span>
         <div className="twin-nav-links">
           <TalkToTwinButton className="twin-nav-link">Digital Twin</TalkToTwinButton>
+          <a href="#projects" className="twin-nav-link">
+            Projects
+          </a>
           <a href="#about" className="twin-nav-link">
             About
           </a>
@@ -233,6 +251,25 @@ export default function TwinProfilePage() {
             <span key={cert} className="tag tag-cert">
               {cert}
             </span>
+          ))}
+        </div>
+      </section>
+
+      <section id="projects" className="section">
+        <h2>Projects</h2>
+        <div className="card-grid">
+          {PROJECTS.map((project) => (
+            <a
+              key={project.title}
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="info-card project-card"
+            >
+              <h3>{project.title}</h3>
+              <p>{project.description}</p>
+              <span className="project-link">View project ↗</span>
+            </a>
           ))}
         </div>
       </section>

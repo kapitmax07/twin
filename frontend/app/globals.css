@@ -521,6 +521,28 @@ h1 {
   margin: 0;
 }
 
+.project-card {
+  display: block;
+  color: var(--twin-text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: var(--twin-accent);
+  transform: translateY(-1px);
+}
+
+.project-card p {
+  margin-bottom: 10px;
+}
+
+.project-link {
+  color: var(--twin-accent-2);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
 .timeline {
   position: relative;
   display: flex;
