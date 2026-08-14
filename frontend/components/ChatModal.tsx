@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { createPortal } from "react-dom";
 import TwinChat from "./TwinChat";
 
 export default function ChatModal({ onClose }: { onClose: () => void }) {
@@ -17,11 +18,12 @@ export default function ChatModal({ onClose }: { onClose: () => void }) {
     };
   }, [onClose]);
 
-  return (
+  return createPortal(
     <div className="modal-overlay" onClick={onClose}>
       <div className="modal-panel" onClick={(e) => e.stopPropagation()}>
         <TwinChat variant="modal" onClose={onClose} />
       </div>
-    </div>
+    </div>,
+    document.body
   );
 }
