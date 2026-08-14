@@ -140,6 +140,14 @@ const CONTINUING_EDUCATION = [
     title: "AI Engineer Production Track",
     description: "Deploy LLMs & Agents at Scale",
   },
+  {
+    title: "Build LLM Apps & AI-Agents with n8n & APIs",
+    description: "",
+  },
+  {
+    title: "The Complete AI Agents and AI Automations",
+    description: "",
+  },
 ];
 
 export default function TwinProfilePage() {
@@ -276,7 +284,7 @@ export default function TwinProfilePage() {
               <div className="timeline-dot" />
               <div className="timeline-content">
                 <h3>{course.title}</h3>
-                <p className="timeline-meta">{course.description}</p>
+                {course.description && <p className="timeline-meta">{course.description}</p>}
               </div>
             </div>
           ))}
