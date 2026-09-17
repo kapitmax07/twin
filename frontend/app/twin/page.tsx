@@ -163,6 +163,18 @@ const PROJECTS = [
       "An AI-powered project estimator for contractors, with instant estimates across electrical, plumbing, HVAC, roofing, and other trades.",
     url: "https://build-iq-ten.vercel.app/",
   },
+  {
+    title: "Corvlyx",
+    description:
+      "A web platform built to deliver a focused product experience for its users.",
+    url: "https://corvlyx.com/",
+  },
+  {
+    title: "VeriSignal Matrix",
+    description:
+      "A trading signals platform providing data-driven market analysis and alerts.",
+    url: "https://verisignalmatrix.trading/",
+  },
 ];
 
 export default function TwinProfilePage() {
